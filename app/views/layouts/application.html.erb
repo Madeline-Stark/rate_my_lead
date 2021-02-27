@@ -10,6 +10,14 @@
   </head>
 
   <body>
+  <% if logged_in? %>
+  <%= link_to("Log Out", '/logout', method: 'delete')%>
+  <% end %>
+
+   <% if flash[:message] %>
+      <div class="field_with_errors"><%= flash[:message] %></div>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>

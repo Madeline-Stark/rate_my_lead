@@ -9,8 +9,8 @@ Review.destroy_all
 Teacher.destroy_all
 User.destroy_all
 
-m = User.create(username: "madeline", password: "password")
-d = User.create(username: "Dustin", password: "password")
+m = User.create(username: "Lady Stark", email: "madeline@flatironschool.com", password: "password")
+d = User.create(username: "Dustin", email: "dustin@flatironschool.com", password: "password")
 
 
 cernan = m.created_teachers.create(name: "Cernan")
