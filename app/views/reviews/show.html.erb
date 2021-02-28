@@ -4,4 +4,7 @@
 <h3><%= @review.rating %> <%= "star".pluralize(@review.rating) %></h3>
 <p> <%= @review.text %></p>
 
-Add links to edit and destroy, only if authroized
+<% if review_owner?(@review) %>
+stuff
+<% end %>
+Add links to edit and destroy
