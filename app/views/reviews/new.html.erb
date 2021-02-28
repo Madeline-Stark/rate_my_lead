@@ -2,11 +2,4 @@
 
 <%= render partial: '/shared/errors', locals: { object: @review} %>
 
-<%= form_for([@teacher, @review]) do |f| %>
-    <%= f.label :rating %>
-    <%= f.number_field :rating %><br>
-    <%= f.label :text %>
-    <%= f.text_area :text %><br>
-    <%= f.hidden_field :teacher_id %>
-    <%= f.submit %>
-<% end %>
+<%= render 'form' %>

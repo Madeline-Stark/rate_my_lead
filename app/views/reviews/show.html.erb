@@ -5,6 +5,5 @@
 <p> <%= @review.text %></p>
 
 <% if review_owner?(@review) %>
-stuff
+<%= link_to("Edit review", edit_review_path(@review)) %>
 <% end %>
-Add links to edit and destroy

@@ -1,4 +1,6 @@
 class ReviewsController < ApplicationController
+  include ReviewsHelper
+
   def new #nested
     @teacher = Teacher.find_by(id: params[:teacher_id])
     @review = @teacher.reviews.build
@@ -24,14 +26,23 @@ class ReviewsController < ApplicationController
   end
 
   def edit
+    @review = Review.find_by(id: params[:id])
+    if !review_owner?(@review)
+      flash[:message] = "Not your review!"
+      redirect_to review_path(@review)
+    end 
   end
 
   def update
-
+    @review = Review.find_by(id: params[:id])
+    @review.update(review_params)
+    redirect_to review_path(@review)
   end 
 
   def destroy 
-
+    @review = Review.find_by(id: params[:id])
+    @review.destroy
+    redirect_to teachers_path
   end 
 
   private
