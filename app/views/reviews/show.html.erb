@@ -1,5 +1,7 @@
-<h1>Reviews#show</h1>
-<p>Find me in app/views/reviews/show.html.erb</p>
+<h1>Review for <%= @review.teacher.name %></h1>
+<h3>by <%= @review.user.username %></h3>
 
-Display text and star rating 
-Add links to edit and destroy
+<h3><%= @review.rating %> <%= "star".pluralize(@review.rating) %></h3>
+<p> <%= @review.text %></p>
+
+Add links to edit and destroy, only if authroized
