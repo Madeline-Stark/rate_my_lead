@@ -1,5 +1,6 @@
 <h1><%= @teacher.name %></h1>
 <h3>from <%= @teacher.location %></h3><br> 
+<h3>Average rating: <%= @teacher.reviews.average_rating %></h3>
 <%= link_to("Reviews for #{@teacher.name}", teacher_reviews_path(@teacher)) %><br>
 <%= link_to("Write a Review for #{@teacher.name}", new_teacher_review_path(@teacher)) %>
 

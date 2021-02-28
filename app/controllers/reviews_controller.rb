@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
   include ReviewsHelper
+  before_action :set_review, only: [:show, :edit, :update, :destroy]
 
   def new #nested
     @teacher = Teacher.find_by(id: params[:teacher_id])
@@ -17,7 +18,7 @@ class ReviewsController < ApplicationController
   end 
 
   def show
-    @review = Review.find_by(id: params[:id])
+   
   end
 
   def index #nested
@@ -26,7 +27,7 @@ class ReviewsController < ApplicationController
   end
 
   def edit
-    @review = Review.find_by(id: params[:id])
+   
     if !review_owner?(@review)
       flash[:message] = "Not your review!"
       redirect_to review_path(@review)
@@ -34,13 +35,13 @@ class ReviewsController < ApplicationController
   end
 
   def update
-    @review = Review.find_by(id: params[:id])
+    
     @review.update(review_params)
     redirect_to review_path(@review)
   end 
 
   def destroy 
-    @review = Review.find_by(id: params[:id])
+   
     @review.destroy
     redirect_to teachers_path
   end 
@@ -50,4 +51,8 @@ class ReviewsController < ApplicationController
   def review_params
     params.require(:review).permit(:teacher_id, :rating, :text)
   end
+
+  def set_review
+    @review = Review.find_by(id: params[:id])
+  end 
 end

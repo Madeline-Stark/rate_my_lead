@@ -6,4 +6,5 @@
 
 <% if review_owner?(@review) %>
 <%= link_to("Edit review", edit_review_path(@review)) %>
+<%= link_to("Delete review", review_path(@review), method: 'delete') %>
 <% end %>
