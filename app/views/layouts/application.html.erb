@@ -12,6 +12,8 @@
   <body>
   <% if logged_in? %>
   <%= link_to("Log Out", '/logout', method: 'delete')%>
+  <%= link_to("Add a Teacher", new_teacher_path) %>
+  <%= link_to("Teacher Directory", teachers_path) %>
   <% end %>
 
    <% if flash[:message] %>

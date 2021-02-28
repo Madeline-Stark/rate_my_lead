@@ -1,0 +1,10 @@
+<h1>Add a Teacher:</h1>
+<%= render partial: '/shared/errors', locals: { object: @teacher} %>
+
+<%= form_for(@teacher) do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %><br>
+    <%= f.label :location %>
+    <%= f.text_field :location %><br>
+    <%= f.submit %>
+<% end %>

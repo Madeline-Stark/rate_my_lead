@@ -16,4 +16,4 @@ d = User.create(username: "Dustin", email: "dustin@flatironschool.com", password
 cernan = m.created_teachers.create(name: "Cernan")
 review = d.reviews.create(text: "Aight", teacher_id: 1)
 review2 = m.reviews.create(text: "noice", teacher_id: 1)
-nancy = m.created_teachers.create(name: "Nancy")
+nancy = m.created_teachers.create(name: "Nancy")    
