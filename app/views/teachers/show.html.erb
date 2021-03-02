@@ -1,4 +1,6 @@
 <h1><%= @teacher.name %></h1>
+<%= image_tag @teacher.profile_picture.variant(resize_to_limit: [100, 100]) if @teacher.profile_picture.attached? %>
+<h3><%= "No Image Uploaded" if !@teacher.profile_picture.attached? %></h3>
 <h3>from <%= @teacher.location %></h3><br> 
 <h3>Average rating: <%= @teacher.reviews.average_rating %></h3>
 <%= link_to("Reviews for #{@teacher.name}", teacher_reviews_path(@teacher)) %><br>
