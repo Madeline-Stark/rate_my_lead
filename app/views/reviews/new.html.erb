@@ -1,5 +1,7 @@
-<h1>Write a Review for <%= @teacher.name %></h1>
+<div class="add_review-container">
+    <h1>Write a Review for <%= @teacher.name %></h1>
 
-<%= render partial: '/shared/errors', locals: { object: @review} %>
+    <%= render partial: '/shared/errors', locals: { object: @review} %>
 
-<%= render 'form' %>
+    <%= render 'form' %>
+</div>
