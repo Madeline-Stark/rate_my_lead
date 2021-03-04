@@ -18,3 +18,5 @@ has many reviews
 has many critics through reviews
 
 user id
+
+add css
